@@ -11,3 +11,9 @@
 -Minification
 -Bundling
 -Compress File
+-Consistent Hashing
+-Code Splitting
+-Differential Bundling - Support older browser
+-Diagnostic
+-Error Handling
+-HTTPs
