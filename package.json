@@ -1,0 +1,23 @@
+{
+  "name": "namaste-react",
+  "version": "1.0.0",
+  "description": "This is my own app",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pooja9872/react.git"
+  },
+  "keywords": [],
+  "author": "Pooja Kumari",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pooja9872/react/issues"
+  },
+  "homepage": "https://github.com/pooja9872/react#readme",
+  "devDependencies": {
+    "parcel": "^2.9.3"
+  }
+}
