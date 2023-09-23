@@ -71,3 +71,18 @@
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   margin-top: 15px;
 }
+
+.filter {
+  margin: 10px;
+  padding: 10px;
+}
+
+.filter-btn {
+  background-color: cornflowerblue;
+  color: #fff;
+  padding: 10px;
+  border-radius: 2px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border: none;
+  cursor: pointer;
+}
