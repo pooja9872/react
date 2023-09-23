@@ -86,3 +86,34 @@
   border: none;
   cursor: pointer;
 }
+
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+@keyframes shimmering {
+  0% {
+    background-position: -1300px 0;
+  }
+  100% {
+    background-position: 1300px 0;
+  }
+}
+
+.shimmer-card {
+  width: 200px;
+  height: 380px;
+  margin-top: 6rem;
+  animation: shimmering 3.1s linear infinite;
+  background: linear-gradient(
+    90deg,
+    rgba(226, 226, 226, 1) 9%,
+    rgba(238, 238, 238, 1) 48%,
+    rgba(226, 226, 226, 1) 71%
+  );
+  background-size: 1300px 100%;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-radius: 5px;
+}
