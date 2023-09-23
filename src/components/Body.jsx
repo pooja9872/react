@@ -5,6 +5,7 @@ import Shimmer from "./Shimmer";
 const Body = () => {
   const [restaurantsOfList, setRestaurantsOfList] = useState([]);
   const [search, setSearch] = useState("");
+  const [filteredRestaurant, setFilteredRestaurant] = useState([]);
 
   useEffect(() => {
     fetchData();
@@ -19,53 +20,60 @@ const Body = () => {
       // optional chaining
       json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
+    setFilteredRestaurant(
+      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
   };
 
   // Conditional Rendering
 
-  return restaurantsOfList.length === 0 ? (
+  return restaurantsOfList.length === 0 || filteredRestaurant.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="body">
-      <div className="search">
-        <input
-          type="text"
-          className="search-box"
-          onChange={(e) => {
-            setSearch(e.target.value);
-          }}
-        />
-        <button
-          className="search-btn"
-          type="button"
-          onClick={() => {
-            // Search logic to see restaurants
-            const searchedValue = restaurantsOfList.filter((res) =>
-              res.info.name.toLowerCase().includes(search.toLowerCase())
-            );
-            setRestaurantsOfList(searchedValue);
-          }}
-        >
-          Search
-        </button>
-      </div>
-      <div className="filter">
-        <button
-          className="filter-btn"
-          type="button"
-          onClick={() => {
-            // Filter logic for top rated restaurants
-            const filteredList = restaurantsOfList.filter(
-              (res) => res.info.avgRating > 4
-            );
-            setRestaurantsOfList(filteredList);
-          }}
-        >
-          Top Rated Restaurants
-        </button>
+    <div className="body-container">
+      <div className="filter-container">
+        <div className="search">
+          <input
+            type="text"
+            className="search-box"
+            value={search}
+            placeholder="Serach here........."
+            onChange={(e) => {
+              setSearch(e.target.value);
+            }}
+          />
+          <button
+            className="search-btn"
+            type="button"
+            onClick={() => {
+              // Search logic to see restaurants
+              const searchedRestaurant = restaurantsOfList.filter((res) =>
+                res.info.name.toLowerCase().includes(search.toLowerCase())
+              );
+              setFilteredRestaurant(searchedRestaurant);
+            }}
+          >
+            Search
+          </button>
+        </div>
+        <div className="filter">
+          <button
+            className="filter-btn"
+            type="button"
+            onClick={() => {
+              // Filter logic for top rated restaurants
+              const filteredList = restaurantsOfList.filter(
+                (res) => res.info.avgRating > 4
+              );
+              setFilteredRestaurant(filteredList);
+            }}
+          >
+            Top Rated Restaurants
+          </button>
+        </div>
       </div>
       <div className="res-container">
-        {restaurantsOfList.map((restaurant) => (
+        {filteredRestaurant.map((restaurant) => (
           <RestaurantCard key={restaurant.info.id} resData={restaurant} />
         ))}
       </div>
