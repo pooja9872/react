@@ -1,13 +1,14 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import Footer from "./components/Footer";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-import About from "./components/About";
-import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
+
+const About = lazy(() => import("./components/About"));
+const Contact = lazy(() => import("./components/Contact"));
 
 const AppLayout = () => {
   return (
@@ -30,11 +31,19 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <About />,
+        element: (
+          <Suspense fallback={<h1>Loading.........</h1>}>
+            <About />
+          </Suspense>
+        ),
       },
       {
         path: "/contact",
-        element: <Contact />,
+        element: (
+          <Suspense fallback={<h1>Loading.....</h1>}>
+            <Contact />
+          </Suspense>
+        ),
       },
       {
         path: "/resturants/:resId",
