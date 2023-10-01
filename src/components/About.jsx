@@ -36,7 +36,7 @@ class About extends React.Component {
   render() {
     // console.log("Parent Render Called");
     return (
-      <div className="main-container">
+      <div className="text-center mt-5 text-xl font-sans">
         <h2>About</h2>
         <h4>
           This is the app where i am learning react and implementing my

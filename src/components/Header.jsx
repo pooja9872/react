@@ -8,12 +8,12 @@ const Header = () => {
   const onlineStatus = useOnlineStatus();
 
   return (
-    <div className="header">
+    <div className="flex justify-between border-solid shadow-xl border-2 bg-orange-400 text-slate-100 font-bold text-lg font-sans">
       <div className="logo-container">
-        <img className="logo" src={LOGO_URL} />
+        <img className="w-52 mix-blend-multiply" src={LOGO_URL} />
       </div>
-      <div className="nav-item">
-        <ul>
+      <div>
+        <ul className="flex gap-4 m-8 p-4 flex-wrap">
           <li>Online Status: {onlineStatus ? "✅" : "🔴"}</li>
           <li>
             <Link to="/" className="headers">
@@ -32,7 +32,7 @@ const Header = () => {
           </li>
           <li>Cart</li>
           <button
-            className="login-btn"
+            className=" bg-orange-950 p-2 rounded"
             onClick={() =>
               loginReact === "Login"
                 ? setLoginReact("Logout")

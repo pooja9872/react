@@ -4,7 +4,7 @@ const Error = () => {
   const err = useRouteError();
 
   return (
-    <div className="main-container">
+    <div className="text-center mt-8 font-bold font-serif">
       <h1>Opps!!!!!!!!!!</h1>
       <h1>Something Went Wrong😰</h1>
       <h1>
