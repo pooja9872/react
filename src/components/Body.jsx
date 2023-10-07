@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
@@ -11,6 +11,8 @@ const Body = () => {
   const [search, setSearch] = useState("");
   const onlineStatus = useOnlineStatus();
   const restaurantsOfList = useRestaurantList();
+
+  const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
 
   useEffect(() => {
     setFilteredRestaurant(restaurantsOfList);
@@ -64,14 +66,20 @@ const Body = () => {
             </button>
           </div>
         </div>
-        <div className="flex flex-wrap gap-8 px-4 min-h-560 text-lg text-white">
+        <div className="flex flex-wrap gap-8 px-4 min-h-600 text-lg text-white">
           {filteredRestaurant.map((restaurant) => (
             <Link
-              className="headers"
               key={restaurant.info.id}
               to={"/resturants/" + restaurant.info.id}
             >
-              <RestaurantCard resData={restaurant} />
+              {
+                /** if the resturant is promoted then add a promoted label to it */
+                restaurant.info.isOpen ? (
+                  <RestaurantCardPromoted resData={restaurant} />
+                ) : (
+                  <RestaurantCard resData={restaurant} />
+                )
+              }
             </Link>
           ))}
         </div>
