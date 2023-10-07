@@ -1,11 +1,13 @@
 import { LOGO_URL } from "../utils/constants";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Header = () => {
   const [loginReact, setLoginReact] = useState("Login");
   const onlineStatus = useOnlineStatus();
+  const data = useContext(UserContext);
 
   return (
     <div className="flex justify-between border-solid shadow-xl border-2 bg-orange-400 text-slate-100 font-bold text-lg font-sans">
@@ -13,7 +15,7 @@ const Header = () => {
         <img className="w-52 mix-blend-multiply" src={LOGO_URL} />
       </div>
       <div>
-        <ul className="flex gap-4 m-8 p-4 flex-wrap">
+        <ul className="flex gap-4 m-8 p-4 flex-wrap cursor-pointer">
           <li>Online Status: {onlineStatus ? "✅" : "🔴"}</li>
           <li>
             <Link to="/" className="headers">
@@ -42,6 +44,7 @@ const Header = () => {
           >
             {loginReact}
           </button>
+          <li className="px-4 font-bold">{data.loggedInUser}</li>
         </ul>
       </div>
     </div>

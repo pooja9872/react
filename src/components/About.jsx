@@ -1,6 +1,6 @@
 import React from "react";
 import UserClass from "./UserClass";
-
+import UserContext from "../utils/UserContext";
 // const About = () => {
 //   const userInfo = {
 //     name: "Pooja",
@@ -38,6 +38,14 @@ class About extends React.Component {
     return (
       <div className="text-center mt-5 text-xl font-sans">
         <h2>About</h2>
+        <div>
+          LoggedIn User
+          <UserContext.Consumer>
+            {({ loggedInUser }) => (
+              <h1 className=" text-xl font-bold">{loggedInUser}</h1>
+            )}
+          </UserContext.Consumer>
+        </div>
         <h4>
           This is the app where i am learning react and implementing my
           knowledge
