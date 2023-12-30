@@ -11,9 +11,10 @@ const useRestaurantList = () => {
   const fetchData = async () => {
     const data = await fetch(RESTAURANT_LIST_URL);
     const json = await data.json();
+
     setRestaurantsOfList(
       // optional chaining
-      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
 
