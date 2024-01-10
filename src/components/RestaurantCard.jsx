@@ -1,14 +1,16 @@
 import { useContext } from "react";
 import { CDN_URL } from "../utils/constants";
 import UserContext from "../utils/UserContext";
-import UserContext from "../utils/UserContext";
 
 const RestaurantCard = (props) => {
   const { resData } = props;
   const { loggedInUser } = useContext(UserContext);
 
   return (
-    <div className="w-96 min-h-full bg-slate-400 border-cyan-400 rounded font-sans cursor-pointer shadow-gray-300 text-center">
+    <div
+      data-testid="resCard"
+      className="w-96 min-h-full bg-slate-400 border-cyan-400 rounded font-sans cursor-pointer shadow-gray-300 text-center"
+    >
       <img
         alt="res-logo"
         className="w-full object-fill h-96"

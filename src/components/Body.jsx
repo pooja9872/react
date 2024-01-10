@@ -27,11 +27,12 @@ const Body = () => {
     return restaurantsOfList.length === 0 || filteredRestaurant.length === 0 ? (
       <Shimmer />
     ) : (
-      <div className="">
+      <div>
         <div className="flex gap-5 m-4">
           <div>
             <input
               type="text"
+              data-testid="searchInput"
               className=" w-96 bg-orange-400 font-semibold rounded me-5 p-3 outline-none text-white"
               value={search}
               placeholder="Serach here........."

@@ -1,0 +1,88 @@
+{
+    "info": {
+        "id": "426730",
+        "name": "Theobroma",
+        "cloudinaryImageId": "b033728dcb0101ceb19bff0e1e1f6474",
+        "locality": "Vittal Malya Road",
+        "areaName": "Ashok Nagar",
+        "costForTwo": "₹400 for two",
+        "cuisines": [
+            "Desserts",
+            "Bakery",
+            "Beverages"
+        ],
+        "avgRating": 4.6,
+        "parentId": "1040",
+        "avgRatingString": "4.6",
+        "totalRatingsString": "1K+",
+        "sla": {
+            "deliveryTime": 16,
+            "lastMileTravel": 0.3,
+            "serviceability": "SERVICEABLE",
+            "slaString": "16 mins",
+            "lastMileTravelString": "0.3 km",
+            "iconType": "ICON_TYPE_EMPTY"
+        },
+        "availability": {
+            "nextCloseTime": "2024-01-07 23:00:00",
+            "opened": true
+        },
+        "badges": {
+            "imageBadges": [
+                {
+                    "imageId": "newg.png",
+                    "description": "Gourmet"
+                }
+            ]
+        },
+        "isOpen": true,
+        "type": "F",
+        "badgesV2": {
+            "entityBadges": {
+                "imageBased": {
+                    "badgeObject": [
+                        {
+                            "attributes": {
+                                "description": "Gourmet",
+                                "imageId": "newg.png"
+                            }
+                        }
+                    ]
+                },
+                "textBased": {},
+                "textExtendedBadges": {}
+            }
+        },
+        "aggregatedDiscountInfoV3": {
+            "header": "₹120 OFF",
+            "subHeader": "ABOVE ₹199",
+            "discountTag": "FLAT DEAL"
+        },
+        "orderabilityCommunication": {
+            "title": {},
+            "subTitle": {},
+            "message": {},
+            "customIcon": {}
+        },
+        "differentiatedUi": {
+            "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+            "differentiatedUiMediaDetails": {
+                "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                "lottie": {},
+                "video": {}
+            }
+        },
+        "reviewsSummary": {},
+        "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+        "restaurantOfferPresentationInfo": {}
+    },
+    "analytics": {
+        "context": "seo-data-8e64f861-cd44-4f99-bdfa-11c9c8586d15"
+    },
+    "cta": {
+        "link": "https://www.swiggy.com/restaurants/theobroma-vittal-malya-road-ashok-nagar-bangalore-426730",
+        "text": "RESTAURANT_MENU",
+        "type": "WEBLINK"
+    },
+    "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
+}
